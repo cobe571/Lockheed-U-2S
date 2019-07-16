@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Updated by 5H1N0B1 : August 2012
+     Updated by Helijah : December 2012
+     Updated by Helijah : November 2013 for U2
+-->
+<PropertyList>
+
+  <fx>
+
+    <engine>
+      <name>start-inside</name>
+      <mode>once</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/start-in.wav</path>
+      <condition>
+        <and>
+          <property>/controls/engines/engine/starter</property>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.03 </min>
+        <max> 0.07 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine/n2</property>
+        <factor> 0.01 </factor>
+        <min> 0.0 </min>
+        <max> 0.9 </max>
+      </pitch>
+   </engine>
+
+    <engine>
+      <name>start-outside</name>
+      <mode>once</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/start-out.wav</path>
+      <condition>
+        <and>
+          <property>/controls/engines/engine/starter</property>
+          <not>
+            <property>/sim/current-view/internal</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine/n2</property>
+        <factor> 0.09 </factor>
+        <min> 0.3 </min>
+        <max> 0.9 </max>
+      </volume>
+      <pitch>
+        <property>engines/engine/n2</property>
+        <factor> 0.01 </factor>
+	<min> 0.0 </min>
+	<max> 0.9 </max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>turbine-inside</name>
+      <mode>looped</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/engine-in.wav</path>
+      <condition>
+        <and>
+          <property>/engines/engine/running</property>
+          <property>/sim/current-view/internal</property>
+        </and>
+      </condition>
+      <volume>
+        <property>engines/engine/n2</property>
+        <factor>0.01</factor>
+        <min>0.03</min>
+        <max>0.07</max>
+      </volume>
+      <pitch>
+        <property>engines/engine/n2</property>
+        <factor>0.01</factor>
+        <min>0</min>
+        <max>0.9</max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine>
+      <name>turbine-outside</name>
+      <mode>looped</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/engine-out.wav</path>
+      <condition>
+        <property>/engines/engine/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+      </condition>
+      <volume>
+        <property>engines/engine/n2</property>
+        <factor>0.09</factor>
+        <min>0.3</min>
+        <max>0.9</max>
+      </volume>
+      <pitch>
+        <property>engines/engine/n2</property>
+        <factor>0.01</factor>
+        <min>0</min>
+        <max>0.9</max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+  
+    <engine>
+      <name>Afterburner</name>
+      <path>Aircraft/Lockheed-U-2S/Sounds/afterburner.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>/engines/engine/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+        <property>controls/engines/engine/reheat</property>
+      </condition>  
+      <property>engines/engine/afterburner</property>
+      <volume>
+        <offset>4.9</offset>
+      </volume> 
+      <reference-dist>100</reference-dist>
+      <max-dist>10000</max-dist>
+    </engine>
+
+    <engine>
+      <name>Sound-Barrier</name>
+      <path>Aircraft/Lockheed-U-2S/Sounds/Sonic-Boom.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/engines/engine/running</property>
+        <not>
+          <property>/sim/current-view/internal</property>
+        </not>
+	 <greater-than>
+            <property>/velocities/mach</property>
+              <value>1.00</value>
+        </greater-than>
+	<less-than>
+          <property>/position/altitude-ft</property>
+          <value>5000.0</value>
+        </less-than>
+      </condition>
+      <volume>
+        <property>controls/engines/engine/reheat</property>
+        <factor>2</factor>
+        <min>0</min>
+        <max>4.5</max>
+      </volume>
+      <orientation>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>180.0</z>
+        <inner-cone>180.0</inner-cone>
+        <outer-cone>360.0</outer-cone>
+        <outer-gain>0.2</outer-gain>
+      </orientation>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+	
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/Wind.wav</path>
+      <condition>
+        <not> 
+          <property>/sim/current-view/internal</property>
+        </not>
+      </condition>
+      <property>/velocities/airspeed-kt</property>
+      <volume>
+        <property>/position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>0.7</max>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.015</factor>
+        <min>0.03</min>
+        <max>0.55</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>0.75</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </wind>
+
+    <rumble>
+      <name>rumble</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>.0005</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rumble>
+
+    <gear>
+      <name>gear</name>
+      <mode>in-transit</mode>
+      <path>Sounds/gear.wav</path>
+      <property>/gear/gear[0]/position-norm</property>
+      <pitch>
+        <internal>dt_play</internal>
+        <offset>1.0</offset>
+        <factor>-0.001</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <gear>
+      <name>gear-lock</name>
+      <path>Sounds/gear-lck.wav</path>
+      <condition>
+        <equals>
+          <property>/gear/gear[0]/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </gear>
+
+    <squeal>
+      <name>squeal</name>
+      <path>Aircraft/Lockheed-U-2S/Sounds/Tire-Squeal.wav</path>
+      <condition>
+        <or>
+          <property>/gear/gear[0]/wow</property>
+          <property>/gear/gear[1]/wow</property>
+          <property>/gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>/velocities/speed-down-fps</property>
+        <factor>0.05</factor>
+      </volume>
+      <volume>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+ 
+    <flap>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>Sounds/flaps.wav</path>
+      <property>/surface-positions/flap-pos-norm</property>
+      <volume>
+        <max>0.25</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </flap>
+
+    <guns>
+      <name>gunfire</name>
+      <mode>looped</mode>
+      <path>Aircraft/Lockheed-U-2S/Sounds/Guns.wav</path>
+      <condition> 
+        <property>controls/armament/trigger</property>
+        <property>ai/submodels/submodel/count</property>
+      </condition>
+      <volume> 
+        <value> 1 </value>
+      </volume>
+    </guns>
+
+  </fx>
+ 
+</PropertyList>

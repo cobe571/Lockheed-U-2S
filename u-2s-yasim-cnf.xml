@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList include="u-2s-base.xml">
+
+  <sim>
+
+    <description>Lockheed U 2S (YASim)</description>
+    <author>Cem AYDIN (3D/FDM/System), BARANGER Emmanuel (3D/FDM), Patrizio MELIS (3D/Textures)</author>
+    <flight-model>yasim</flight-model>
+    <aero>u-2s-yasim</aero>
+
+  </sim>
+  
+</PropertyList>

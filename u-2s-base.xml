@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Lockheed U-2S</description>
+    <aircraft-version>20130312</aircraft-version>
+    <author>Cem AYDIN (3D/FDM/System), Emmanuel BARANGER (3D/FDM), Patrizio MELIS (3D/Textures)</author>
+    <status>alpha</status>
+
+    <fuel-fraction> 0.8 </fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Lockheed-U-2S/u-2s-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path>Aircraft/Lockheed-U-2S/Models/u-2s.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <door-positions>
+        <crew>
+          <position-norm>
+            <value> 1 </value>
+          </position-norm>
+        </crew>
+      </door-positions>
+    </model>
+    
+    <autostart>
+      <started type="bool">0</started>
+    </autostart>
+
+    <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Lockheed-U-2S/Models/Pogos/release.xml</path>
+    </submodels>
+
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/Lockheed-U-2S/Sounds/u-2s-sounds.xml</path>
+    </sound>
+
+    <!-- Flaps Settings, to be corrected -->
+<!--
+    <flaps>
+      <setting> 0.05 </setting>
+      <setting> 0.10 </setting>
+      <setting> 0.15 </setting>
+      <setting> 0.20 </setting>
+      <setting> 0.25 </setting>
+    </flaps>
+-->
+    <!-- Spoiler Settings, to be corrected -->
+<!--
+    <spoilers>
+      <setting> 0.0 </setting>
+      <setting> 0.2 </setting>
+      <setting> 0.4 </setting>
+      <setting> 0.7 </setting>
+      <setting> 1.0 </setting>
+    </spoilers>
+-->
+<!-- Aircraft Help Menu entries -->
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">   0 </int>                                               <!--  0 immat -->
+        <int type="int" n="1">   0 </int>                                               <!--  1 immat -->
+        <int type="int" n="2">   0 </int>                                               <!--  2 immat -->
+        <int type="int" n="3">   0 </int>                                               <!--  3 immat -->
+        <int type="int" n="4">   0 </int>                                               <!--  4 immat -->
+        <int type="int" n="5">   0 </int>                                               <!--  5 immat -->
+        <int type="int" n="6">   1 </int>                                               <!--  POGO1relase -->
+        <int type="int" n="7">   1 </int>                                               <!--  POGO2relase -->
+        <int type="int" n="8" alias="/sim/model/show-immat"> 0 </int>                   <!--  6 Show immat -->
+        <int type="int" n="9">   0 </int>                                               <!--  POGO1dropped -->
+        <int type="int" n="10">  0 </int>                                               <!--  POGO2dropped -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"> 1 </float>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                            <!-- altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                           <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/engines/engine[0]/n1" />
+        <float n="7" alias="/controls/engines/engine[0]/throttle" />
+        <string n="9" type="string" />                                                   <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Lockheed U2-S Help</title>
+      <key>
+       <name>d</name>
+       <desc>open/close canopy</desc>
+      </key>
+      <key>
+       <name>j/k</name>
+       <desc>decrease/increase spoilers</desc>
+      </key>
+      <key>
+       <name>??</name>
+       <desc>decrease/increase speedbrake</desc>
+      </key>
+      <line>----------------------------------</line>
+      <line>-- pogos not droppable yet      --</line>
+      <line>-- speedbrake to be implemented --</line>
+      <line>-- this help is just a bogus !  --</line>
+      <line>-- more to come ------------------</line>
+      <line>---vvv-------vvv------------------</line>
+      <line>----------------------------------</line>
+      <line>Check: Canopy closed, parking brake released</line>
+      <line>Takeoff: Full throttle, takes off very fast.. for now!</line>
+      <line>Climb: Climb up to 70'000ft maintaining 100kt by adapting aoa</line>
+      <line>Land: Throttle almost idle</line>
+      <line>      Flaps and Spoilers as needed</line>
+      <line>      </line>
+      <line>Have Fun!</line>
+    </help>
+
+    <menubar include="Dialogs/u-2s-menu.xml"/>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/u-2s-keyboard.xml"/>
+  </input>
+
+  <controls>
+    <engines>
+      <engine n="0">
+        <boost type="double">0</boost>
+        <magnetos>0</magnetos>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+  </controls>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <rpm>500</rpm>
+      <running>false</running>
+    </engine>
+  </engines>
+
+  <gear>
+    <gear n="2">
+      <position-norm> 1 </position-norm>
+    </gear>
+    <gear n="3">
+      <position-norm> 1 </position-norm>
+    </gear>
+  </gear>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Lockheed-U-2S/Nasal/doors.nas</file>
+    </doors>
+    <u2s>
+      <file>Aircraft/Lockheed-U-2S/Nasal/liveries.nas</file>
+      <file>Aircraft/Lockheed-U-2S/Nasal/light.nas</file>
+    </u2s>
+    <engines>
+      <file>Aircraft/Generic/Engines/generic-yasim-engine.nas</file>
+      <file>Aircraft/Lockheed-U-2S/Nasal/engines-yasim.nas</file>
+    </engines>
+    <wheels>
+      <file>Aircraft/Lockheed-U-2S/Nasal/wheels.nas</file>
+    </wheels>
+  </nasal>
+
+</PropertyList>

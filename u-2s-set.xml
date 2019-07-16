@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- <PropertyList include="u-2s-jsbsim-cnf.xml"> -->
+<PropertyList include="u-2s-yasim-cnf.xml">
+
+  <sim>
+
+    <description>Lockheed U 2S (YASim)</description>
+    <author>Cem AYDIN (3D/FDM/System), Emmanuel BARANGER (3D/FDM), Patrizio MELIS (3D/Textures)</author>
+
+    <rating>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 0 </systems>
+      <cockpit type="int"> 0 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
+  </sim>
+
+</PropertyList>

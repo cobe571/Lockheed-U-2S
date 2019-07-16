@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <key n="100">
+    <name>d</name>
+    <desc>Canopy</desc>
+    <binding>
+      <command>nasal</command>
+      <script>doors.crew.toggle();</script>
+    </binding>
+  </key>
+
+  <key n="115">
+    <name>s</name>
+    <desc>Engine Autostart</desc>
+    <binding>
+      <command>nasal</command>
+      <script>engines.autostart();</script>
+    </binding>
+  </key>
+   
+</PropertyList>
