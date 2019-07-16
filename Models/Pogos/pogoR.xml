@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>pogos.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>axe</object-name>
+    <object-name>roue</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+  
+  <animation>
+    <name>Gear</name>
+    <object-name>axe</object-name>
+    <object-name>roue</object-name>
+  </animation>
+    
+  <animation>
+    <type>select</type>
+    <object-name>Gear</object-name>
+    <condition>
+      <equals>
+        <property>/sim/multiplay/generic/int[6]</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

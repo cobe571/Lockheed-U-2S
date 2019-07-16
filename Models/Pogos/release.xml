@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <submodel> 
+    <name>Left Pogos release</name>
+    <model>Aircraft/Lockheed-U-2S/Models/Pogos/pogo.xml</model>
+    <trigger>/sim/multiplay/generic/int[9]</trigger>
+    <repeat>false</repeat>
+    <speed-prop>
+      <property>/velocities/airspeed-kt</property>
+    </speed-prop>
+    <delay> 0 </delay>
+    <count> 1 </count>
+    <life> 100 </life>
+    <aero-stabilised>false</aero-stabilised>
+    <eda> 1.45 </eda>
+    <cd>  1.05 </cd>
+    <weight> 22 </weight>
+    <x-offset> -2.4159643 </x-offset> <!--  0.73635 m = -2.4159643 ft -->
+    <y-offset> 28.5972620 </y-offset> <!-- -8.71602 m = 28.5972620 ft --> 
+    <z-offset>  4.2759961 </z-offset> <!--  1.30326 m =  4.2759961 ft --> 
+    <yaw-offset> 0 </yaw-offset>
+    <pitch-offset> 0 </pitch-offset>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+  </submodel>
+
+  <submodel> 
+    <name>Right Pogos release</name>
+    <model>Aircraft/Lockheed-U-2S/Models/Pogos/pogo.xml</model>
+    <trigger>/sim/multiplay/generic/int[10]</trigger>
+    <speed-prop>
+      <property>/velocities/airspeed-kt</property>
+    </speed-prop>
+    <delay> 0 </delay>
+    <count> 1 </count>
+    <life> 100 </life>
+    <aero-stabilised>false</aero-stabilised>
+    <eda> 1.45 </eda>
+    <cd>  1.05 </cd>
+    <weight> 22 </weight>
+    <x-offset>  -2.4159643 </x-offset> <!-- 0.73635 m =  -2.4159643 ft -->
+    <y-offset> -28.5972620 </y-offset> <!-- 8.71602 m = -28.5972620 ft --> 
+    <z-offset>   4.2759961 </z-offset> <!-- 1.30326 m =   4.2759961 ft --> 
+    <yaw-offset> 0 </yaw-offset>
+    <pitch-offset> 0 </pitch-offset>
+    <impact>true</impact>
+    <impact-report>sim/ai/aircraft/impact/bomb</impact-report>
+  </submodel>
+
+</PropertyList>

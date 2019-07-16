@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Pogos/pogoL.xml</path>
+    <offsets>
+      <x-m>  0.73635 </x-m>
+      <y-m> -8.71602 </y-m>
+      <z-m>  1.30326 </z-m>
+    </offsets>
+  </model>
+ 
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Pogos/pogoR.xml</path>
+    <offsets>
+      <x-m> 0.73635 </x-m>
+      <y-m> 8.71602 </y-m>
+      <z-m> 1.30326 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>
