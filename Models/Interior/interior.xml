@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+  
+  <animation>
+    <object-name>intCockpit_Inside</object-name>
+    <object-name>Cockpit_Inside</object-name>
+    <object-name>intCockpit_Frontframe</object-name>
+    <object-name>intCanopy</object-name>
+    <object-name>Ejection-Seat</object-name>
+    <object-name>supportmirrors</object-name>
+    <object-name>Internal-mirrors</object-name>
+    
+    <object-name>intCanopy_Glass</object-name>
+    <object-name>intCockpit_Frontglass</object-name>
+  </animation>
+      
+  <!-- Shading -->
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intCanopy_Glass</object-name>
+    <object-name>intCockpit_Frontglass</object-name>
+    <object-name>Internal-mirrors</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intCanopy_Glass</object-name>
+    <object-name>intCockpit_Frontglass</object-name>
+    <object-name>Internal-mirrors</object-name>
+  </effect>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -5.64655 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.58093 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Seat -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Interior/Seat/seat.xml</path>
+    <offsets>
+      <x-m> -5.65 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  1.65 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Panel -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -6.32200 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.62516 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Yole -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Interior/Panel/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -6.13161 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.07376 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Pedals -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Interior/Panel/Pedals/all-pedals.xml</path>
+  </model>
+
+  <!-- Throttle -->
+  <model>
+    <path>Aircraft/Lockheed-U-2S/Models/Interior/Panel/Instruments/Throttle/throttle.xml</path>
+    <offsets>
+      <x-m> -6.04373 </x-m>
+      <y-m> -0.32761 </y-m>
+      <z-m>  1.39632 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Canopy -->
+  <animation>
+    <name>IntAllCanopy</name>
+    <object-name>intCanopy</object-name>
+    <object-name>intCanopy_Glass</object-name>
+  </animation>
+    
+  <animation>
+    <type>pick</type>
+    <object-name>IntAllCanopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntAllCanopy</object-name>
+    <property>/sim/multiplay/generic/float[0]</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 85 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -6.06352 </x1-m>
+      <y1-m> -0.41168 </y1-m>
+      <z1-m>  1.74012 </z1-m>
+      <x2-m> -5.17260 </x2-m>
+      <y2-m> -0.44389 </y2-m>
+      <z2-m>  1.84379 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
