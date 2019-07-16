@@ -11,7 +11,7 @@ A little history
 The U-2 was first flown on August 1, 1955 after development by Clarence Kelly Johnson's Skunk Works team at Palmdale, California.
 The U-2 has seen many improvements but its longevity is owed to the fact that it is, without question, the ultimate high-altitude subsonic
 aircraft. The success of the early models led to the conduct of thousands of surveillance missions with the 56 original airframes. Unfortunately,
-its difficult handling characteristics claimed over 40 airframes and many lives of the volunteers who flew them. The programs mission success 
+its difficult handling characteristics claimed over 40 airframes and many lives of the volunteers who flew them. The program's mission success 
 increased demand of the capabilities and so, the second generation U-2 was developed. The second generation aircraft was larger by 40%. The fuselage
 was enlarged which allowed more space for the pilot to wear a full pressure suit and for the bays to carry larger sensor packages. The second 
 generation aircraft was known as the U-2R and alternatively as the TR-1. The latest version, the U-2S has a glass cockpit and clear front windscreen
